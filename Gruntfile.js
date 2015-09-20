@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     // inspeccion de archivos en tiempo real
     watch: {
       express: {
-        files: ['bin/www', 'routes/**/*.js', 'views/**/*.ejs', '*.js'],
+        files: ['bin/www', 'routes/**/*.js', 'views/**/*.ejs', '*.js', 'models/**/*.js', 'controllers/**/*.ejs'],
         tasks: ['express:defaults'],
         options: { livereload: true, spawn: false }
       },

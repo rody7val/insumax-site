@@ -1,0 +1,13 @@
+<% for(var i=0; i<articulos.length; i++) { %>
+  <p>
+	<img src="<%= articulos[i].imagen %>"
+		style="max-width:200px">
+	<h2><%= articulos[i].nombre %></h2>
+	<a href="#" class="cart-buy-button"
+	  data-name="<%= articulos[i].nombre %>"
+	  data-price="<%= articulos[i].precio %>"
+	  data-quantity="1"
+	>Buy $<%= articulos[i].nombre %></a>
+	<p><%= articulos[i].descipcion %></p>
+  </p>
+<% } %>

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>InsuMAX</title>
     <link rel='stylesheet' href='/stylesheets/base.css' />
     <link rel='stylesheet' href='/stylesheets/mapbox.css' />
     <link rel='stylesheet' href='/stylesheets/backend.css' />
     <link rel='stylesheet' href='/stylesheets/frontend.css' />
+    <style>
+    .bootstrap-widget .popover {margin-left: -80px !important;}
+    .bootstrap-widget .popover .arrow {margin-left: 70px !important;}
+    </style>
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/mapbox.js"></script>
@@ -17,11 +21,17 @@
       <header>
         <nav class="navbar navbar-fixed-top">
           <div class="navbar-header pull-left">
-            <a class="navbar-brand" href="#">InsuMAX</a>
+            <a class="navbar-brand" href="/">InsuMAX</a>
+            <a class="navbar-brand" href="/articulos">Productos</a>
+            <a class="navbar-brand" href="#">Quienes Somos</a>
           </div>
           <div class="navbar-header pull-right">
-            <button type="button" class="btn btn-default navbar-btn">Button 1</button>
-            <button type="button" class="btn btn-default navbar-btn">Button 2</button>
+            <!-- <a href="#" class="btn btn-primary navbar-btn"><span id="item">0</span> Articulos</a> -->
+            <a href="#" class="cart-button btn btn-primary navbar-btn">
+              <span class="cart-button-quantity"></span>
+              <span class="cart-button-label"></span>
+              <!-- Or put an image here instead of span elements with text. -->
+            </a>
           </div>
         </nav>
       </header>
@@ -37,4 +47,18 @@
       </footer>
     </div>
   </body>
+    <script src="http://salejs.com/v1/cart.js"></script>
+    <script>
+      cartjs.initialize({
+        emailOrdersTo  : 'rod7val@gmail.com',
+    
+        // Optional configuration options.
+        language       : 'english', // 'russian' and 'ukrainian' also available.
+        currency       : '$',
+        requireName    : true,      // Require name in contact form.
+        requirePhone   : true,      // Require phone in contact form.
+        requireEmail   : false,     // Require email in contact form.
+        requireAddress : false,     // Require address in contact form.
+      })
+    </script>
 </html>

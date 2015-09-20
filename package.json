@@ -21,7 +21,11 @@
     "express": "~4.9.0",
     "express-generator": "~4.9.0",
     "express-partials": "^0.3.0",
+    "mongodb": "^2.0.43",
+    "mongoose": "3.6.x",
     "morgan": "~1.3.0",
+    "redis": "~0.10.1",
+    "salejs": "^1.2.4",
     "serve-favicon": "~2.1.3"
   },
   "devDependencies": {
