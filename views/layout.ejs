@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel='stylesheet' href='/stylesheets/mapbox.css' />
+    <link rel='stylesheet' href='/stylesheets/backend.css' />
+    <link rel='stylesheet' href='/stylesheets/frontend.css' />
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/mapbox.js"></script>
+    <script src="/javascripts/backend.js"></script>
+    <script src="/javascripts/frontend.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <nav class="navbar navbar-fixed-top">
+          <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="#">InsuMAX</a>
+          </div>
+          <div class="navbar-header pull-right">
+            <button type="button" class="btn btn-default navbar-btn">Button 1</button>
+            <button type="button" class="btn btn-default navbar-btn">Button 2</button>
+          </div>
+        </nav>
+      </header>
+
+      <section class="main">
+        <div class="container">
+          <%- body %>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container footer">@footer</div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "insumax-site",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "mapbox.js": "~2.2.1"
+  }
+}
