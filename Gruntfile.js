@@ -19,6 +19,12 @@ module.exports = function(grunt) {
         src: 'jquery.min.js',
         dest: 'public/javascripts/'
       },
+      fonts: {
+        expand: true,
+        cwd: 'compile/bootstrap/fonts/',
+        src: '*.*',
+        dest: 'public/fonts/'
+      },
       bootstrap: {
         expand: true,
         cwd: 'compile/bootstrap/dist/js/',
@@ -65,7 +71,7 @@ module.exports = function(grunt) {
     // inspeccion de archivos en tiempo real
     watch: {
       express: {
-        files: ['bin/www', 'routes/**/*.js', 'views/**/*.ejs', '*.js', 'models/**/*.js', 'controllers/**/*.ejs'],
+        files: ['bin/www', 'routes/**/*.js', 'views/**/*.ejs', '*.js', 'models/**/*.js', 'controllers/**/*.js'],
         tasks: ['express:defaults'],
         options: { livereload: true, spawn: false }
       },

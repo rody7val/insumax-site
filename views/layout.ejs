@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
+  <meta charset="utf-8">
   <head>
     <title>InsuMAX</title>
     <link rel='stylesheet' href='/stylesheets/base.css' />
     <link rel='stylesheet' href='/stylesheets/mapbox.css' />
     <link rel='stylesheet' href='/stylesheets/backend.css' />
     <link rel='stylesheet' href='/stylesheets/frontend.css' />
-    <style>
-    .bootstrap-widget .popover {margin-left: -80px !important;}
-    .bootstrap-widget .popover .arrow {margin-left: 70px !important;}
-    </style>
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/mapbox.js"></script>
@@ -22,22 +19,39 @@
         <nav class="navbar navbar-fixed-top">
           <div class="navbar-header pull-left">
             <a class="navbar-brand" href="/">InsuMAX</a>
-            <a class="navbar-brand" href="/articulos">Productos</a>
+            <a class="navbar-brand" href="/articulos">Presupuestos</a>
             <a class="navbar-brand" href="#">Quienes Somos</a>
           </div>
           <div class="navbar-header pull-right">
-            <!-- <a href="#" class="btn btn-primary navbar-btn"><span id="item">0</span> Articulos</a> -->
-            <a href="#" class="cart-button btn btn-primary navbar-btn">
-              <span class="cart-button-quantity"></span>
-              <span class="cart-button-label"></span>
-              <!-- Or put an image here instead of span elements with text. -->
-            </a>
+            <% if(!cart) { %>
+              <p>error cart!</p>
+            <% }else{ %>
+              <a href="#" class="btn btn-primary navbar-btn"
+                 data-html="true"
+                 data-toggle="popover"
+                 data-placement="bottom"
+                 data-trigger="focus"
+                 data-content="<p><%= cart %></p>" >
+                <span id="item"><%= cart.qty() %></span>
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+              </a>
+            <% } %>
           </div>
         </nav>
       </header>
 
       <section class="main">
         <div class="container">
+          <div class="err">
+            <% if (errors.length) { %>
+              <span id="ErrorMsgs">
+                Corregir errores:<br/>
+                <% for (var i in errors) { %>
+                  <p> <%= errors[i].message %> </p>
+                <% } %>
+              </span>
+            <% } %>
+          </div>
           <%- body %>
         </div>
       </section>
@@ -46,19 +60,8 @@
         <div class="container footer">@footer</div>
       </footer>
     </div>
+    <script type="text/javascript">$(function () {
+  $('[data-toggle="popover"]').popover()
+})</script>
   </body>
-    <script src="http://salejs.com/v1/cart.js"></script>
-    <script>
-      cartjs.initialize({
-        emailOrdersTo  : 'rod7val@gmail.com',
-    
-        // Optional configuration options.
-        language       : 'english', // 'russian' and 'ukrainian' also available.
-        currency       : '$',
-        requireName    : true,      // Require name in contact form.
-        requirePhone   : true,      // Require phone in contact form.
-        requireEmail   : false,     // Require email in contact form.
-        requireAddress : false,     // Require address in contact form.
-      })
-    </script>
 </html>

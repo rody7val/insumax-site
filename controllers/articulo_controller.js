@@ -1,4 +1,6 @@
 var models = require('../models/models.js');
+var nodemailer = require("nodemailer");
+var mailer = nodemailer.createTransport();
 
 // GET /articulos/
 exports.index = function(req, res, next){

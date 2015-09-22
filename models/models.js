@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/sc');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
 
+//importar tabla Articulo
 var Articulo = require('./articulo');
 
 //exportar tabla Articulo

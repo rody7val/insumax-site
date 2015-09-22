@@ -1,13 +1,37 @@
-<% for(var i=0; i<articulos.length; i++) { %>
-  <p>
-	<img src="<%= articulos[i].imagen %>"
-		style="max-width:200px">
-	<h2><%= articulos[i].nombre %></h2>
-	<a href="#" class="cart-buy-button"
-	  data-name="<%= articulos[i].nombre %>"
-	  data-price="<%= articulos[i].precio %>"
-	  data-quantity="1"
-	>Buy $<%= articulos[i].nombre %></a>
-	<p><%= articulos[i].descipcion %></p>
-  </p>
-<% } %>
+<div class="row">
+	<div class="col-md-12 presupuesto-header">
+		<h2>Pedir presupuesto</h2>
+		<p class="lead">En esta lista de productos usted podra solicitarnos un presupuesto. 
+		El cual le responderemos a la brebedad. Solo debe hacer click en el boton 
+		<span class="btn btn-primary">Agregar</span> en alguno de los siguientes productos 
+		y sera agregado a la lista de presupuestos.</p>
+		<div class="alert alert-info" role="alert">
+			<p><strong>Aviso!</strong> El listado de presupuestos se encuentra en la esquina superior derecha 
+			de esta pantalla. Tambien puede hacer click sobre el boton de para ver, cambiar o enviar el presupuesto.</p>
+		</div>
+		<hr>
+	</div>
+</div>
+
+<div class="row">
+	<% for(var i=0; i<articulos.length; i++) { %>
+		<div class="col-sm-6 col-md-4">
+		  <div class="thumbnail">
+				<img 
+					src="<%= articulos[i].imagen %>"
+					alt="<%= articulos[i].nombre %>"
+					class="img-responsive">
+				<div class="caption">
+					<h2><%= articulos[i].nombre %></h2>
+					<a 
+						href="#" 
+						class="btn btn-primary cart-buy-button"
+					  data-name="<%= articulos[i].nombre %>"
+					  data-price="<%= articulos[i].precio %>"
+					  data-quantity="1">Agregar</a>
+					<p><%= articulos[i].descripcion %></p>
+				</div>
+		  </div>
+		</div>
+	<% } %>
+</div>
